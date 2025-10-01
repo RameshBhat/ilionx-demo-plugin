@@ -4,12 +4,12 @@
                              http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
 <groupId>com.rgb.icm.plugin</groupId>
-<artifactId> SampleICNPlugin </artifactId>
+<artifactId> ilionxDemoPlugin </artifactId>
 <version>0.0.1-SNAPSHOT</version>
-<name> SampleICNPlugin </name>
+<name> ilionxDemoPlugin </name>
  
 <properties>
-      <pluginClass>com.ibm.icm.extension.custom.SampleICNPlugin</pluginClass>
+      <pluginClass>com.ibm.icm.extension.custom.ilionxDemoPlugin</pluginClass>
   </properties>
 
 

@@ -1,0 +1,393 @@
+/* 
+ * Ilionx Toolbar Branding CSS
+ * Adds Ilionx branding to IBM Content Navigator toolbar
+ */
+
+/* Import CSS Variables */
+@import url('variables.css');
+
+/* Ilionx ECM Banner Styling */
+.ecmBanner {
+    background: linear-gradient(135deg, var(--white) 0%, var(--gray-50) 100%) !important;
+    border-bottom: 3px solid var(--ilionx-red) !important;
+    box-shadow: var(--shadow-md) !important;
+    position: relative !important;
+}
+
+.ecmBanner .bannerContainer {
+    position: relative !important;
+    padding-right: 150px !important;
+}
+
+
+
+/* Ilionx Company Name with Official Typography */
+.ecmBanner::after {
+    content: "ilionx";
+    position: absolute;
+    top: 50%;
+    right: var(--spacing-md);
+    transform: translateY(-50%);
+    font-size: 28px;
+    font-weight: 300;
+    color: var(--ilionx-red);
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+    text-transform: lowercase;
+    letter-spacing: -0.5px;
+    z-index: 10;
+}
+
+/* Ilionx Tagline in Banner */
+.ecmBanner .bannerContainer::after {
+    content: "experts in eenvoud";
+    position: absolute;
+    top: 50%;
+    right: var(--spacing-md);
+    transform: translateY(25%);
+    font-size: 11px;
+    color: var(--ilionx-gray-light);
+    font-style: italic;
+    font-weight: 300;
+    z-index: 10;
+    pointer-events: none;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+}
+
+/* bannerContainer Ilionx Branding */
+.ecmBanner .bannerContainer {
+    background: rgba(249, 250, 251, 0.95) !important;
+    border: 1px solid rgba(229, 62, 62, 0.2) !important;
+    border-radius: var(--radius-lg) !important;
+    box-shadow: 0 2px 8px rgba(229, 62, 62, 0.1) !important;
+    backdrop-filter: blur(5px);
+    margin: var(--spacing-sm) !important;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif !important;
+}
+
+/* Responsive Design for Banner */
+@media (max-width: 768px) {
+    .ecmBanner::after {
+        font-size: 20px;
+    }
+    
+    .ecmBanner .bannerContainer::after {
+        display: none;
+    }
+    
+    .ecmBanner .bannerContainer {
+        padding-right: 100px !important;
+    }
+    
+    .ecmBanner .bannerMenu,
+    .ecmBanner .bannerUserMenu {
+        font-size: 12px !important;
+        padding: 2px 4px !important;
+    }
+}
+
+/* Ilionx Footer Bar */
+.ilionx-footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 50px;
+    background: linear-gradient(135deg, var(--white) 0%, var(--gray-50) 100%);
+    border-top: 3px solid var(--ilionx-red);
+    box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.1);
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 var(--spacing-lg);
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+}
+
+/* Ilionx Branding in Footer */
+.ilionx-footer-brand {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+}
+
+.ilionx-footer-logo {
+    font-size: 24px;
+    font-weight: 300;
+    color: var(--ilionx-red);
+    text-transform: lowercase;
+    letter-spacing: -0.5px;
+}
+
+.ilionx-footer-tagline {
+    font-size: 11px;
+    color: var(--ilionx-gray-light);
+    font-style: italic;
+    font-weight: 300;
+}
+
+/* ICN Info in Footer */
+.ilionx-footer-info {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    color: var(--ilionx-gray);
+    font-size: 12px;
+}
+
+.ilionx-footer-version {
+    background: var(--ilionx-red-light);
+    color: var(--ilionx-red-dark);
+    padding: 2px 6px;
+    border-radius: var(--radius-sm);
+    font-weight: 600;
+    font-size: 10px;
+}
+
+/* Desktop Body Adjustment for Footer */
+body.ilionx-footer-themed {
+    padding-bottom: 50px !important;
+}
+
+/* Responsive Design for Footer */
+@media (max-width: 768px) {
+    .ilionx-footer {
+        height: 40px;
+        padding: 0 var(--spacing-md);
+    }
+    
+    .ilionx-footer-logo {
+        font-size: 18px;
+    }
+    
+    .ilionx-footer-tagline {
+        display: none;
+    }
+    
+    .ilionx-footer-info {
+        font-size: 10px;
+    }
+    
+    body.ilionx-footer-themed {
+        padding-bottom: 40px !important;
+    }
+}
+
+/* Ilionx Home Pane Welcome Page Styling */
+.ilionx-home-pane {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif !important;
+    color: var(--ilionx-gray-dark) !important;
+    overflow-y: auto !important;
+}
+
+.ilionx-welcome-page {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: var(--spacing-lg);
+}
+
+.ilionx-hero-section {
+    text-align: center;
+    padding: var(--spacing-xl) 0;
+    background: linear-gradient(135deg, var(--white) 0%, var(--gray-50) 100%);
+    border-radius: var(--radius-lg);
+    border: 1px solid rgba(229, 62, 62, 0.1);
+    margin-bottom: var(--spacing-xl);
+}
+
+.ilionx-logo-large {
+    font-size: 4rem;
+    font-weight: 300;
+    color: var(--ilionx-red);
+    text-transform: lowercase;
+    letter-spacing: -2px;
+    margin-bottom: var(--spacing-md);
+}
+
+.ilionx-hero-section h1 {
+    font-size: 2rem;
+    font-weight: 300;
+    color: var(--ilionx-gray-dark);
+    margin-bottom: var(--spacing-sm);
+    text-transform: lowercase;
+}
+
+.ilionx-tagline {
+    font-size: 1.1rem;
+    color: var(--ilionx-gray);
+    font-style: italic;
+    margin: 0;
+}
+
+.ilionx-description {
+    text-align: center;
+    margin-bottom: var(--spacing-xl);
+}
+
+.ilionx-description p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: var(--ilionx-gray);
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.ilionx-cta-section {
+    text-align: center;
+    margin-bottom: var(--spacing-xl);
+    padding: var(--spacing-lg);
+    background: var(--gray-50);
+    border-radius: var(--radius-md);
+    border: 1px solid rgba(229, 62, 62, 0.1);
+}
+
+.ilionx-visit-btn {
+    background: var(--ilionx-red);
+    color: var(--white);
+    border: none;
+    padding: var(--spacing-md) var(--spacing-xl);
+    font-size: 1.1rem;
+    font-weight: 600;
+    border-radius: var(--radius-md);
+    cursor: pointer;
+    transition: all var(--transition-base);
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+    text-transform: lowercase;
+    margin-bottom: var(--spacing-sm);
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.ilionx-visit-btn:hover {
+    background: var(--ilionx-red-dark);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+}
+
+.ilionx-cta-text {
+    font-size: 0.9rem;
+    color: var(--ilionx-gray-light);
+    margin: var(--spacing-sm) 0 0 0;
+}
+
+.ilionx-features {
+    margin-bottom: var(--spacing-xl);
+}
+
+.feature-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: var(--spacing-md);
+}
+
+.feature-item {
+    background: var(--white);
+    border: 1px solid rgba(229, 62, 62, 0.1);
+    border-radius: var(--radius-md);
+    padding: var(--spacing-lg);
+    text-align: center;
+    transition: all var(--transition-base);
+}
+
+.feature-item:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+    border-color: rgba(229, 62, 62, 0.2);
+}
+
+.feature-item h3 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--ilionx-red);
+    margin-bottom: var(--spacing-sm);
+    text-transform: lowercase;
+}
+
+.feature-item p {
+    color: var(--ilionx-gray);
+    margin: 0;
+    font-size: 0.9rem;
+}
+
+.ilionx-contact-info {
+    text-align: center;
+    padding: var(--spacing-xl);
+    background: linear-gradient(135deg, var(--gray-50) 0%, var(--white) 100%);
+    border-radius: var(--radius-lg);
+    border: 1px solid rgba(229, 62, 62, 0.1);
+}
+
+.ilionx-contact-info h2 {
+    font-size: 1.8rem;
+    font-weight: 300;
+    color: var(--ilionx-red);
+    margin-bottom: var(--spacing-lg);
+    text-transform: lowercase;
+}
+
+.contact-details p {
+    margin: var(--spacing-xs) 0;
+    color: var(--ilionx-gray);
+    line-height: 1.6;
+}
+
+.contact-details p:first-child {
+    font-weight: 600;
+    color: var(--ilionx-gray-dark);
+}
+
+/* Responsive Design for Welcome Page */
+@media (max-width: 768px) {
+    .ilionx-welcome-page {
+        padding: var(--spacing-md);
+    }
+    
+    .ilionx-logo-large {
+        font-size: 3rem;
+    }
+    
+    .ilionx-hero-section h1 {
+        font-size: 1.6rem;
+    }
+    
+    .feature-grid {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-sm);
+    }
+    
+    .ilionx-visit-btn {
+        width: 100%;
+        padding: var(--spacing-md);
+    }
+}
+
+/* Animation */
+.ilionx-footer {
+    animation: slideUp 0.3s ease-out;
+}
+
+@keyframes slideUp {
+    from {
+        transform: translateY(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.ilionx-home-content {
+    animation: fadeInContent 0.6s ease-out;
+}
+
+@keyframes fadeInContent {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

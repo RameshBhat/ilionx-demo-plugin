@@ -1,0 +1,54 @@
+/* 
+ * Ilionx Brand Variables
+ * Official Ilionx colors and spacing
+ */
+
+:root {
+    /* Ilionx Brand Colors */
+    --ilionx-red: #e53e3e;
+    --ilionx-red-light: rgba(229, 62, 62, 0.1);
+    --ilionx-red-dark: #c53030;
+    --ilionx-blue: #2b6cb0;
+    --ilionx-gray: #4a5568;
+    --ilionx-gray-light: #718096;
+    --ilionx-gray-dark: #2d3748;
+    
+    /* Base Colors */
+    --white: #ffffff;
+    --gray-50: #f9fafb;
+    --gray-100: #f3f4f6;
+    --gray-200: #e5e7eb;
+    --gray-300: #d1d5db;
+    --gray-800: #1f2937;
+    
+    /* Spacing */
+    --spacing-xs: 4px;
+    --spacing-sm: 8px;
+    --spacing-md: 16px;
+    --spacing-lg: 24px;
+    --spacing-xl: 32px;
+    
+    /* Typography */
+    --font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    --font-size-xs: 10px;
+    --font-size-sm: 12px;
+    --font-size-base: 14px;
+    --font-size-lg: 16px;
+    --font-size-xl: 18px;
+    --font-size-2xl: 20px;
+    
+    /* Border Radius */
+    --radius-sm: 4px;
+    --radius-md: 6px;
+    --radius-lg: 8px;
+    --radius-xl: 12px;
+    
+    /* Shadows */
+    --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+    --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+    
+    /* Transitions */
+    --transition-base: 0.2s ease-in-out;
+    --transition-fast: 0.15s ease-in-out;
+}
