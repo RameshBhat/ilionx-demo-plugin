@@ -20,7 +20,7 @@ This plugin integrates Ilionx brand elements into IBM Content Navigator, includi
 
 ## Technical Stack
 
-- **Platform**: IBM Content Navigator 3.2.0
+- **Platform**: IBM Content Navigator 3.1.0
 - **Build System**: Apache Maven
 - **Frontend**: Dojo Toolkit JavaScript framework
 - **Styling**: CSS3 with custom variables
@@ -48,9 +48,9 @@ SampleICNPlugin/
 
 ## Prerequisites
 
-- Java 8 or higher
+- Java 11 or higher
 - Apache Maven 3.6+
-- IBM Content Navigator 3.2.0+
+- IBM Content Navigator 3.1.0+
 - OpenShift CLI (for deployment)
 - Navigator API JAR file (navigatorAPI-3.1.0.jar)
 
@@ -96,8 +96,7 @@ This command installs the IBM Navigator API JAR from the `lib/` directory into y
 
 1. Build the plugin (see above)
 2. Copy the JAR file to your IBM Content Navigator plugins directory
-3. Restart the Content Navigator application
-4. Configure the plugin in the ICN Admin Console
+3. Configure the plugin in the ICN Admin Console
 
 ### OpenShift Deployment
 
@@ -105,10 +104,7 @@ For OpenShift environments:
 
 ```bash
 # Copy plugin to running pod
-oc cp target/ilionxDemoPlugin-0.0.1-SNAPSHOT.jar icp4adeploy-navigator-deploy-697cccb8c6-5krph:/opt/ibm/plugins/
-
-# Restart navigator service if needed
-oc rollout restart deployment icp4adeploy-navigator-deploy
+oc cp target/ilionxDemoPlugin-0.0.1-SNAPSHOT.jar icp4adeploy-navigator-deploy-xxxxxx:/opt/ibm/plugins/
 ```
 
 ## Configuration
@@ -123,17 +119,6 @@ oc rollout restart deployment icp4adeploy-navigator-deploy
 
 ### Java Plugin Class (`ilionxDemoPlugin.java`)
 
-```java
-public class ilionxDemoPlugin extends Plugin {
-    public String getCSSFileName() {
-        return "css/ilionxDemoTheme.css";
-    }
-    
-    public String getDojoModule() {
-        return "ilionxDemoPlugin";
-    }
-}
-```
 
 ### JavaScript Module (`ilionxDemoPlugin.js`)
 
@@ -158,38 +143,6 @@ The plugin follows Ilionx brand guidelines:
 - **Typography**: Clean, professional fonts
 - **Logo Usage**: Consistent placement and sizing
 
-## Development
-
-### Local Development
-
-1. **Setup Environment**:
-   ```bash
-   # Ensure Java and Maven are installed
-   java -version
-   mvn -version
-   ```
-
-2. **Install Navigator API Dependency**:
-   ```bash
-   # One-time setup: Install Navigator API to local Maven repo
-   mvn install:install-file -Dfile=lib/navigatorAPI-3.1.0.jar -DgroupId=com.ibm.ecm -DartifactId=navigatorAPI -Dversion=3.1.0 -Dpackaging=jar
-   ```
-
-3. **Make Changes**: Edit source files in `src/main/`
-
-4. **Build and Test**:
-   ```bash
-   mvn clean compile
-   mvn package
-   ```
-
-5. **Deploy**: Copy JAR to ICN environment
-
-### Code Style
-
-- **Java**: Follow IBM Java coding standards
-- **JavaScript**: Use Dojo patterns and conventions
-- **CSS**: Use BEM methodology for class naming
 
 ## Troubleshooting
 
