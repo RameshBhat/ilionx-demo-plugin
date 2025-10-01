@@ -213,5 +213,3 @@ mvn install:install-file -Dfile=lib/navigatorAPI-3.1.0.jar -DgroupId=com.ibm.ecm
 - ECM banner customization
 
 ---
-
-**"experts in eenvoud"** - Bringing simplicity to complex IT environments.
