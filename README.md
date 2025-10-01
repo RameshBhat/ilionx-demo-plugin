@@ -250,18 +250,6 @@ mvn install:install-file -Dfile=lib/navigatorAPI-3.1.0.jar -DgroupId=com.ibm.ecm
 4. Push to branch (`git push origin feature/new-feature`)
 5. Create Pull Request
 
-## License
-
-This project is proprietary software developed for Ilionx integration with IBM Content Navigator.
-
-## Contact
-
-**Ilionx**
-- Website: [https://www.ilionx.com/](https://www.ilionx.com/)
-- Email: info@ilionx.com
-- Phone: (088) 05 90 500
-- Address: Van Deventerlaan 12, 3528 AG Utrecht, Netherlands
-
 ## Changelog
 
 ### Version 0.0.1-SNAPSHOT
