@@ -52,8 +52,22 @@ SampleICNPlugin/
 - Apache Maven 3.6+
 - IBM Content Navigator 3.2.0+
 - OpenShift CLI (for deployment)
+- Navigator API JAR file (navigatorAPI-3.1.0.jar)
 
 ## Building the Plugin
+
+### 1. Setup Dependencies
+
+Before building, you need to install the Navigator API JAR to your local Maven repository:
+
+```bash
+# Install Navigator API to local Maven repository
+mvn install:install-file -Dfile=lib/navigatorAPI-3.1.0.jar -DgroupId=com.ibm -DartifactId=navigatorAPI -Dversion=3.1.0 -Dpackaging=jar
+```
+
+This command installs the IBM Navigator API JAR from the `lib/` directory into your local Maven repository, making it available as a dependency for the build process.
+
+### 2. Clone and Build
 
 1. **Clone the repository**:
    ```bash
@@ -61,12 +75,17 @@ SampleICNPlugin/
    cd SampleICNPlugin
    ```
 
-2. **Build with Maven**:
+2. **Install Navigator API dependency** (if not done already):
+   ```bash
+   mvn install:install-file -Dfile=lib/navigatorAPI-3.1.0.jar -DgroupId=com.ibm.ecm -DartifactId=navigatorAPI -Dversion=3.1.0 -Dpackaging=jar
+   ```
+
+3. **Build with Maven**:
    ```bash
    mvn clean package
    ```
 
-3. **Generated artifact**:
+4. **Generated artifact**:
    ```
    target/ilionxDemoPlugin-0.0.1-SNAPSHOT.jar
    ```
@@ -150,15 +169,21 @@ The plugin follows Ilionx brand guidelines:
    mvn -version
    ```
 
-2. **Make Changes**: Edit source files in `src/main/`
+2. **Install Navigator API Dependency**:
+   ```bash
+   # One-time setup: Install Navigator API to local Maven repo
+   mvn install:install-file -Dfile=lib/navigatorAPI-3.1.0.jar -DgroupId=com.ibm.ecm -DartifactId=navigatorAPI -Dversion=3.1.0 -Dpackaging=jar
+   ```
 
-3. **Build and Test**:
+3. **Make Changes**: Edit source files in `src/main/`
+
+4. **Build and Test**:
    ```bash
    mvn clean compile
    mvn package
    ```
 
-4. **Deploy**: Copy JAR to ICN environment
+5. **Deploy**: Copy JAR to ICN environment
 
 ### Code Style
 
@@ -196,6 +221,12 @@ tail -f /opt/ibm/logs/navigator.log
 
 # Maven debug build
 mvn clean package -X
+
+# Verify Navigator API dependency installation
+mvn dependency:tree | grep navigatorAPI
+
+# Re-install Navigator API if needed
+mvn install:install-file -Dfile=lib/navigatorAPI-3.1.0.jar -DgroupId=com.ibm.ecm -DartifactId=navigatorAPI -Dversion=3.1.0 -Dpackaging=jar
 ```
 
 ## Browser Compatibility
